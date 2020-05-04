@@ -73,8 +73,6 @@ public class Main {
 
 
         // Process output stats
-
-        // mean queue length
         double meanQueueLength = queueTotoal / arrivalCount;
         double utilizationRate = busyTime / time;
 

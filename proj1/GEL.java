@@ -7,6 +7,8 @@ public class GEL extends LinkedList<Event>{
         super();
     }
 
+    
+    // Insert new element in a ascending manner
     public void insert(Event newEvent) {
         for(int i = 0; i < this.size(); i ++) {
             if(newEvent.compareTo(this.get(i)) == -1) {

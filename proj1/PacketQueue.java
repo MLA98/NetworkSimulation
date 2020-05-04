@@ -5,6 +5,7 @@ public class PacketQueue extends LinkedList<Double>{
     int maxSize;
 
     public PacketQueue(int size) {
+    	
         // If the queue is supposed to be infinite, 
         // the size should -1.
         super();
@@ -14,11 +15,12 @@ public class PacketQueue extends LinkedList<Double>{
     @Override
     public boolean add(Double val) {
         if(this.size() == maxSize && maxSize != -1) {
+        	// Packet dropped.
             return false;
         }
 
-        this.addLast(val);
         // Packet added.
+        this.addLast(val);
         return true;
     }
 
