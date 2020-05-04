@@ -9,9 +9,9 @@ This project is an implementation of discrete event simulation of a switch queue
 ### Data Structure
 * Event: Event is a data structure to store an event. It includes timestamp and service time. 
 
-* Global Event List (GEL) : Global Event list is a list to store every events generated in the simulation process. The data structure is implemented with linked list provided by Java.util package. Upon insertion, the newly added event will be inserted in a position to maintain a ascending order. removeFirst() method is used to get the event with earliest timestamp.
+* Global Event List (GEL) : Global Event list is a list to store every events generated in the simulation process. The data structure class is a subclass of LinkedList provided by Java.util package. Upon insertion, the newly added event will be inserted in a position to maintain a ascending order. 
 
-* Packet Queue: Packet Queue is a queue to store each packet waiting for processing. It is implemented with Queue which is a FIFO data structure provided by Java.util package. Besides the basic function of a queue, we add instance variable to record max queue size and implemente an 'add' method to drop packet if the queue has max queue size elements.
+* Packet Queue: Packet Queue is a queue to store each packet waiting for processing. The data structure class is a subclass of LinkedList provided by Java.util package. Besides the basic function of a queue, we add instance variable to record max queue size and implemente an 'add' method to drop packet if the queue has max queue size elements.
 
 
 ### Function
