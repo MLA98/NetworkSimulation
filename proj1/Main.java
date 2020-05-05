@@ -5,12 +5,21 @@ public class Main {
         double arrivalRate = Double.parseDouble(args[0]);
         double serviceRate = Double.parseDouble(args[1]);
         int MAXBUFFER = Integer.parseInt(args[2]);
+        String distribution = args[3];
 
         // Initialization
         GEL globalList = new GEL();
         double time = 0;
         PacketQueue buffer = new PacketQueue(MAXBUFFER);
-        Event firstEvent = new Event(time + RandomGen.generator(arrivalRate), RandomGen.generator(serviceRate), EventType.Arrival);
+        
+        Event firstEvent;
+        if(distribution.equals("negExp")) {
+        	firstEvent = new Event(time + RandomGen.NegExpGenerator(arrivalRate), RandomGen.NegExpGenerator(serviceRate), EventType.Arrival);
+        }
+        else {
+        	firstEvent = new Event(time + RandomGen.ParetoGenerator(arrivalRate), RandomGen.ParetoGenerator(serviceRate), EventType.Arrival);
+        }
+        
         globalList.insert(firstEvent);
         
         int dropCount = 0;   
@@ -38,7 +47,15 @@ public class Main {
 
                 // If the event is an arrival then process-arrival-event;
                 time = currEvent.timeStamp;
-                Event newEvent = new Event(time + RandomGen.generator(arrivalRate), RandomGen.generator(serviceRate), EventType.Arrival);
+                
+                Event newEvent;
+                if(distribution.equals("negExp")) {
+                	newEvent = new Event(time + RandomGen.NegExpGenerator(arrivalRate), RandomGen.NegExpGenerator(serviceRate), EventType.Arrival);
+                }
+                else {
+                	newEvent = new Event(time + RandomGen.ParetoGenerator(arrivalRate), RandomGen.ParetoGenerator(serviceRate), EventType.Arrival);
+                }
+                
                 globalList.insert(newEvent);
 
                 if(length == 0) {

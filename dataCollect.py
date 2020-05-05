@@ -7,6 +7,7 @@ serviceRate = '1';
 arrivalRate = ['0.1', '0.2', '0.4', '0.5', '0.6', '0.8', '0.9'];
 maxBufferSize = ['-1', '1', '20', '30']
 script = './run.sh'
+option = 'negExp'
 
 class dataPerMaxBufferSize:
   def __init__(self, maxBufferSize):
@@ -19,7 +20,7 @@ class dataPerMaxBufferSize:
     self.simulation()
   def simulation(self):
     for r in arrivalRate:
-        result = subprocess.run([script, r, serviceRate, self.maxBufferSize], stdout=subprocess.PIPE).stdout.decode('utf-8').split('\n')
+        result = subprocess.run([script, r, serviceRate, self.maxBufferSize, option], stdout=subprocess.PIPE).stdout.decode('utf-8').split('\n')
         print(result)
         data = result[len(result) - 2].split(' ')[-1]
         self.utilizationRate.append(data)
