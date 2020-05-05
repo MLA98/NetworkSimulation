@@ -44,6 +44,6 @@ we did both unit test and system test in this project.
 ## Project Insights and Individual contributions
 ### Yuliang Dong
 
- I have done the most coding implementation including data structures and overall logic. In addition, I have done most report. 
+ I have done the most coding implementation including data structures and overall logic. In addition, I have done report except analysis part. Also, I have done shell script and python data processing.
 
 In my opinion, the most challenging and interesting aspect of my implementation is learning discrete event simulation. Discrete event simulation is quite counter-intuitive to me who have lived in a world with linear time. However, I think it is a powerful tool for me to simulate the real world with higher efficiency. 
