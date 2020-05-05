@@ -19,6 +19,9 @@ public class Main {
         double arrivalCount = 0;
         double queueTotoal = 0;
         int departCount = 0;
+        
+        double lastQueueChangeTime = 0;
+        double queueArea = 0;
 
         
         // Event Processing
@@ -39,6 +42,8 @@ public class Main {
                 globalList.insert(newEvent);
 
                 if(length == 0) {
+                    queueArea += (time - lastQueueChangeTime) * length;
+                    lastQueueChangeTime = time;
                     length ++;
                     Event newDepEvent = new Event(time + currEvent.serviceTime, 0, EventType.Departure);
                     globalList.insert(newDepEvent);
@@ -49,6 +54,8 @@ public class Main {
                         dropCount ++;
                     }
                     else{
+                    	queueArea += (time - lastQueueChangeTime) * length;
+                    	lastQueueChangeTime = time;
                         length ++;
                     }
                     // Update statistics which maintain the mean queue-length and the server busy time.
@@ -61,6 +68,8 @@ public class Main {
 
                 // Update statistics which maintain the mean queue-length and the server busy time.
                 // Since this is a packet departure, we decrement the length.
+                queueArea += (time - lastQueueChangeTime) * length;
+                lastQueueChangeTime = time;
                 length --;
 
                 if(length > 0) {
@@ -73,8 +82,8 @@ public class Main {
 
 
         // Process output stats
-        double meanQueueLength = queueTotoal / arrivalCount;
         double utilizationRate = busyTime / time;
+        double meanQueueLength = queueArea / time;
 
         System.out.format("Dropcount: %d\n", dropCount);
         System.out.format("Mean queue Length: %f\n", meanQueueLength);
