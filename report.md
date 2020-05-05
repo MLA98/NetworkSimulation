@@ -45,13 +45,13 @@ we did both unit test and system test in this project.
 * System test: we compare the output statistic with theoretical value to see if our simulation is working correctly.
 
 ## Project Insights and Individual contributions
-### Yuliang Dong
+### Yuliang Dong(yuldong@ucdavis.edu)
 
 I have done the most coding implementation including data structures, overall logic and tests. In addition, I have done report except analysis part. Also, I have done shell script and python data processing.
 
 In my opinion, the most challenging and interesting aspect of my implementation is learning discrete event simulation. Discrete event simulation is quite counter-intuitive to me who have lived in a world with linear time. However, I think it is a powerful tool for me to simulate the real world with higher efficiency.
 
-### Jui-yang Cheng
+### Jui-yang Cheng(zrycheng@ucdavis.edu)
 
 Main tasks: Code reviewing, debugging, python graph code, plot and analysis for experiment, extra credit Pareto distribution random sample generator.
 
