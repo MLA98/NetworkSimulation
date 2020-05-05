@@ -1,4 +1,7 @@
 # ECS152A Project 1: Discrete event simulation of Queue
+<div align = "center">Yuliang Dong (yuldong@ucdavis.edu)</div>
+<div align = "center">Jui-yang Cheng (zrycheng@ucdavis.edu)</div>
+<div align = "center">Sampson Ezieme (siezieme@ucdavis.edu)</div>
 ## Description of discrete event simulation
 Discrete event simulation is a method to simulate systems like a queue. Unlike synchronous simulation, discrete event simulation is based on the occurrence time of events instead of real time.  The simulation time jump from one event to next event. 
  
@@ -44,6 +47,12 @@ we did both unit test and system test in this project.
 ## Project Insights and Individual contributions
 ### Yuliang Dong
 
- I have done the most coding implementation including data structures, overall logic and tests. In addition, I have done report except analysis part. Also, I have done shell script and python data processing.
+I have done the most coding implementation including data structures, overall logic and tests. In addition, I have done report except analysis part. Also, I have done shell script and python data processing.
 
-In my opinion, the most challenging and interesting aspect of my implementation is learning discrete event simulation. Discrete event simulation is quite counter-intuitive to me who have lived in a world with linear time. However, I think it is a powerful tool for me to simulate the real world with higher efficiency. 
+In my opinion, the most challenging and interesting aspect of my implementation is learning discrete event simulation. Discrete event simulation is quite counter-intuitive to me who have lived in a world with linear time. However, I think it is a powerful tool for me to simulate the real world with higher efficiency.
+
+### Jui-yang Cheng
+
+Main tasks: Code reviewing, debugging, python graph code, plot and analysis for experiment, extra credit Pareto distribution random sample generator.
+
+Debugging is always the part that take most effort since we did not fully understand the logic at the beginning. In terms of coding, I was initially trying to plot a 3D graph using python but was unsuccessful since I was new to 3D plotting, so I eventually decide to give up the 3D graphing and turns to normal 2D charts. Also, it's pretty difficult to determine the scale and shape of Pareto distribution since some choices will cause the result to be too small that the program simply return 0. It requires some research to determine the best value for these two variables.
