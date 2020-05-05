@@ -35,7 +35,7 @@ The overall logic for the simulation is from assignment specification.
 
 * Utilization rate and BusyTime: BusyTime variable will be increament by service time of an arrival event when the arrival event is being processed. Eventually, utilization rate will be BusyTime divided by Time.
 
-* MeanQueue length, arrivalCount and queueTotal: queueTotal will be increamented by length when an arrival event is being processed. Meanwhile, arrival counte will be incremented by 1. Eventually, MeanQueue length will be queueTotal divided by arrivalCount.
+* Mean Queue length, queueArea and lastQueueChangeTime: The calculation of mean queue length is through calculating the area under the curve. When the queue change, we will calculate the area by (current time - lastQueueChangeTime) * length.
 
 ## Test Approach
 we did both unit test and system test in this project.
