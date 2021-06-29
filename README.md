@@ -1,5 +1,3 @@
-# ECS-152A
+# 网络模拟
 
-## run.sh is the shell script to run our simulation
-- It takes four arguments: ArrivalRate, ServiceRate, MaxBufferSize and distribution time.
-- Example to run it: ./run.sh 0.1 1 20 negExp
+java程序模拟网络的延迟，丢包率。
